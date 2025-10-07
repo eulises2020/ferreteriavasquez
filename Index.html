@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería Vásquez - Tu Aliado en Herramientas y Construcción</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1920') center/cover;
+        }
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-orange-500 p-2 rounded-lg">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">Ferretería Vásquez</h1>
+                        <p class="text-xs text-gray-300">Calidad y confianza</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="hover:text-orange-400 transition">Inicio</a>
+                    <a href="#productos" class="hover:text-orange-400 transition">Productos</a>
+                    <a href="#promociones" class="hover:text-orange-400 transition">Promociones</a>
+                    <a href="#nosotros" class="hover:text-orange-400 transition">Nosotros</a>
+                    <a href="#contacto" class="hover:text-orange-400 transition">Contacto</a>
+                    <button class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-full font-semibold transition transform hover:scale-105">
+                        Ver Catálogo
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMenu()" class="md:hidden">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="#inicio" class="block hover:text-orange-400 transition">Inicio</a>
+                <a href="#productos" class="block hover:text-orange-400 transition">Productos</a>
+                <a href="#promociones" class="block hover:text-orange-400 transition">Promociones</a>
+                <a href="#nosotros" class="block hover:text-orange-400 transition">Nosotros</a>
+                <a href="#contacto" class="block hover:text-orange-400 transition">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg relative min-h-screen flex items-center justify-center text-white">
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <div class="mb-6 inline-block">
+                <svg class="w-20 h-20 text-orange-500 bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 15-6 6m0 0-6-6m6 6V9a6 6 0 0 1 12 0v3"></path>
+                </svg>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Todo en herramientas y materiales de calidad
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                Ferretería Vásquez — Confianza, durabilidad y servicio.
+            </p>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
+                Explorar Productos
+            </button>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">Nuestra Historia</h3>
+                    <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+                        Desde hace más de 25 años, <strong>Ferretería Vásquez</strong> ha sido el aliado de confianza para constructores, profesionales y hogares en toda la región.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-4 leading-relaxed">
+                        Nos especializamos en ofrecer herramientas de primera calidad, materiales de construcción duraderos y productos para el hogar que transforman espacios.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Nuestro compromiso es brindar <strong>atención personalizada</strong>, precios justos y la mejor selección de productos para cada proyecto, grande o pequeño.
+                    </p>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="bg-orange-500 text-white p-4 rounded-lg">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-2xl text-gray-900">25+ Años</p>
+                            <p class="text-gray-600">De experiencia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" alt="Ferretería Vásquez" class="rounded-lg shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-orange-500 text-white p-6 rounded-lg shadow-xl">
+                        <p class="text-3xl font-bold">5000+</p>
+                        <p class="text-sm">Clientes satisfechos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Nuestros Productos</h3>
+                <p class="text-gray-600 text-lg">Herramientas y materiales de la más alta calidad</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterProducts('todos')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-orange-500 text-white">
+                    Todos
+                </button>
+                <button onclick="filterProducts('electricas')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-700 hover:bg-gray-100">
+                    Herramientas Eléctricas
+                </button>
+                <button onclick="filterProducts('manuales')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-700 hover:bg-gray-100">
+                    Herramientas Manuales
+                </button>
+                <button onclick="filterProducts('construccion')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-700 hover:bg-gray-100">
+                    Construcción
+                </button>
+                <button onclick="filterProducts('hogar')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-700 hover:bg-gray-100">
+                    Hogar
+                </button>
+                <button onclick="filterProducts('jardineria')" class="category-btn px-6 py-2 rounded-full font-semibold transition bg-white text-gray-700 hover:bg-gray-100">
+                    Jardinería
+                </button>
+            </div>
+
+            <!-- Add Product Button -->
+            <div class="flex justify-center mb-8">
+                <button onclick="toggleProductForm()" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    <span>Agregar Producto</span>
+                </button>
+            </div>
+
+            <!-- Product Form -->
+            <div id="product-form" class="hidden max-w-2xl mx-auto mb-10 bg-white p-8 rounded-lg shadow-lg">
+                <h4 class="text-2xl font-bold text-gray-900 mb-6">Nuevo Producto</h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nombre del Producto</label>
+                        <input type="text" id="product-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Precio (L.)</label>
+                        <input type="number" id="product-price" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Categoría</label>
+                        <select id="product-category" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <option value="electricas">Herramientas Eléctricas</option>
+                            <option value="manuales">Herramientas Manuales</option>
+                            <option value="construccion">Construcción</option>
+                            <option value="hogar">Hogar</option>
+                            <option value="jardineria">Jardinería</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">URL de la Imagen</label>
+                        <input type="url" id="product-image" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Etiqueta (opcional)</label>
+                        <select id="product-badge" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <option value="">Sin etiqueta</option>
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Oferta">Oferta</option>
+                            <option value="Destacado">Destacado</option>
+                        </select>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button onclick="addProduct()" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition">
+                            Agregar Producto
+                        </button>
+                        <button onclick="toggleProductForm()" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 py-3 rounded-lg font-semibold transition">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones Section -->
+    <section id="promociones" class="py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-4">Promociones Destacadas</h3>
+                <p class="text-xl">Aprovecha nuestras ofertas especiales</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white text-gray-900 rounded-lg p-8 shadow-xl card-hover">
+                    <div class="flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-center">20% OFF en Herramientas</h4>
+                    <p class="text-gray-600 text-center mb-4">Todas las herramientas eléctricas</p>
+                    <p class="text-5xl font-bold text-orange-500 text-center">20%</p>
+                </div>
+                <div class="bg-white text-gray-900 rounded-lg p-8 shadow-xl card-hover">
+                    <div class="flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-center">Envío Gratis</h4>
+                    <p class="text-gray-600 text-center mb-4">En compras mayores a L. 1,000</p>
+                    <p class="text-5xl font-bold text-orange-500 text-center">GRATIS</p>
+                </div>
+                <div class="bg-white text-gray-900 rounded-lg p-8 shadow-xl card-hover">
+                    <div class="flex items-center justify-center w-20 h-20 bg-orange-500 text-white rounded-full mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-3 text-center">Pack Constructor</h4>
+                    <p class="text-gray-600 text-center mb-4">Combo especial con 15% descuento</p>
+                    <p class="text-5xl font-bold text-orange-500 text-center">15%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Contáctanos</h3>
+                <p class="text-gray-600 text-lg">Estamos aquí para ayudarte</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nombre Completo</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Correo Electrónico</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Teléfono</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
+                        </div>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Dirección</h4>
+                                <p class="text-gray-700">Av. Principal, El Progreso, Yoro<br>Honduras</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Teléfono</h4>
+                                <p class="text-gray-700">+504 2647-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Correo</h4>
+                                <p class="text-gray-700">info@ferreteriavasquez.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-gray-900 mb-3">Horario de Atención</h4>
+                        <p class="text-gray-700">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                        <p class="text-gray-700">Sábados: 8:00 AM - 4:00 PM</p>
+                        <p class="text-gray-700">Domingos: Cerrado</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-12 h-12 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2
